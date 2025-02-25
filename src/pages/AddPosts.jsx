@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 export default function AddPosts() {
@@ -12,6 +13,7 @@ export default function AddPosts() {
         content: "",
         tags: [],
     };
+
 
     // utilizzo lo useState per la gestione delle informazioni raccolte dai campi del form
     const [formData, setFormData] = useState(initialFormData);
@@ -29,8 +31,10 @@ export default function AddPosts() {
     }
 
 
-    // funzione che andrà a gestire l'intero form con tutte le info relative
+    const navigate = useNavigate();
 
+
+    // funzione che andrà a gestire l'intero form con tutte le info relative
     function handleSubmit(e) {
         e.preventDefault();
         // prendimi dvdDIsney allo suo stato precedente e ritornami un nuovo array con tutto il contenuto che c'era nell'array precedente aggiungendo un nuovo oggetto
@@ -40,9 +44,7 @@ export default function AddPosts() {
         axios.post("http://localhost:3000/posts/", formData)
             .then((res) =>
 
-                // setPostList(res.data)
-                setPost((currentPost) => [...currentPost, res.data])
-
+                navigate("/post")
             )
             .catch(err => {
                 console.log(err)

@@ -11,6 +11,7 @@ export default function PostsDetailsPage() {
 
 
 
+
     //funzione di gestione chiamate API
     function fetchPost() {
         axios.get(`http://localhost:3000/posts/${id}`)
@@ -23,6 +24,8 @@ export default function PostsDetailsPage() {
 
 
     useEffect(() => fetchPost(), [id]);
+
+
 
 
     return (

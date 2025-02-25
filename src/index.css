@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    background-color: rgb(247, 147, 214);
+    height: 80px;
+}
+
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+    list-style-type: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+#form input {
+    border: solid 2px black;
+    background-color: rgb(223, 150, 223);
+    margin-top: 20px;
+
+}
+
+input {
+    display: flex;
+    padding: 5px;
+
+}
+
+button {
+    margin-top: 10px;
+}
+
+
+.container {
+    display: flex;
+    margin: 20px;
+    border: solid 1px black;
+}
+
+.postsitem img {
+    width: 100%;
+}
+
+p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+span {
+    margin: 40px;
+
+
+}

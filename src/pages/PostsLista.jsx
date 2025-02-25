@@ -121,11 +121,15 @@ export default function PostsLista() {
             </form>
 
             {posts.map((post) => (
+
                 <div className='container' key={post.id} >
-                    <h2>{post.title}</h2>
-                    <img src={post.image} alt={post.title} />
-                    <p>{post.content}</p>
-                    <span>{post.tags.join(",")}</span>
+                    <div className='postsitem'>
+                        <h2>{post.title}</h2>
+                        <img src={post.image} alt={post.title} />
+                        <p>{post.content}</p>
+                        <span>{post.tags.join(",")}</span>
+                    </div>
+
                 </div >
             ))}
         </>

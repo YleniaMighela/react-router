@@ -60,8 +60,11 @@ p {
     margin-bottom: 20px;
 }
 
-span {
-    margin: 40px;
 
 
+.postsitem a {
+    color: blueviolet;
+    display: block;
+    font-size: 20px;
+    padding: 20px;
 }

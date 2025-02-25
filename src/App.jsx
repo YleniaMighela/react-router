@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // importo le pages
@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import ChiSiamo from "./pages/ChiSiamo.jsx";
 import PostsLista from "./pages/PostsLista.jsx";
 import AddPosts from "./pages/AddPosts.jsx";
+import PostsDetailsPage from "./pages/PostsDetailsPage.jsx";
 
 // importo il LAYOUT
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -26,6 +27,8 @@ function App() {
             <Route path="/chisiamo" element={<ChiSiamo />} />
             <Route path="/post" element={<PostsLista />} />
             <Route path="/aggiungipost" element={<AddPosts />} />
+            <Route path="/aggiungipost/:id" element={<PostsDetailsPage />} />
+
 
 
           </Route>

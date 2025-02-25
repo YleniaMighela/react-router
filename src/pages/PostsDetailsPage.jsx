@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+
 export default function PostsDetailsPage() {
     const { id } = useParams();
 
 
-    const [posts, setPost] = useState({});
+    const [post, setPost] = useState({});
 
 
 
     //funzione di gestione chiamate API
-    function fetchPosts() {
+    function fetchPost() {
         axios.get(`http://localhost:3000/posts/${id}`)
             .then((res) => {
                 setPost(res.data)
@@ -21,12 +22,14 @@ export default function PostsDetailsPage() {
     }
 
 
-    useEffect(() => fetchPosts(), [id]);
+    useEffect(() => fetchPost(), [id]);
 
 
     return (
         <div>
-            <h1>ID prodotto:{id}</h1>
+            <h2>{post.title}</h2>
+            <img src={post.image} alt={post.title} />
+            <p>{post.content}</p>
         </div>
     );
 

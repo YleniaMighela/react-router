@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 
@@ -29,11 +30,19 @@ export default function PostsDetailsPage() {
 
 
     return (
-        <div>
+        <>
+
+            <nav>
+                <Link to={`/aggiungipost/${parseInt(id) - 1}`}>Prev</Link>
+                <Link to={`/aggiungipost/${parseInt(id) + 1}`}>Next</Link>
+            </nav>
+
+
             <h2>{post.title}</h2>
             <img src={post.image} alt={post.title} />
             <p>{post.content}</p>
-        </div>
+
+        </>
     );
 
 }
